@@ -1,11 +1,13 @@
-<%@ page language="java" contentType="text/html"%>
-<%@ page import="java.text.,java.util." %>
+<%@ page import = "java.util.Date" %>
+<%@ page import = "java.text.SimpleDateFormat" %>
 <html>
 <head>
-<title>Date JSP</title>
+<%
+  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+  String date = sdf.format(new Date());
+%>
 </head>
-<% SimpleDateFormat sdf=new SimpleDateFormat("MM/dd/yyyy"); %>
 <body>
-<h1>Welcome to Tomcat! Today is <%= sdf.format(new Date()) %></h1>
+<p>Hello!  The time is now <%=date%></p>
 </body>
 </html>
